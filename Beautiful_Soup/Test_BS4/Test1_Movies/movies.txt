@@ -1,0 +1,6 @@
+MOVIE : Rangamarthanda || STARS : 3.5 
+MOVIE : Ghosty || STARS : 1.5 
+MOVIE : Mrs Chatterjee Vs Norway || STARS : 3.0 
+MOVIE : Zwigato || STARS : 3.5 
+MOVIE : Kabzaa || STARS : 3.5 
+MOVIE : Shubh Nikah || STARS : 2.5 

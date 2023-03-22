@@ -1,0 +1,63 @@
+# Selenium  Basics Notes:
+https://selenium-python.readthedocs.io/
+- install selenium in python 
+    pip install -U selenium
+
+- Simple Example for open youtube :
+    import webdriver from selenium  
+    driver=webdriver.Chrome()
+    url = "https://www.youtube.com/"
+    driver.get(url)
+
+
+- Google search :
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
+    -  set url
+    - find element
+        (By.NAME,'q')
+    - add surch text:
+        send_keys("what you want ")
+        send_keys(Keys.RETURN) # triger the keyvalues 
+    -test1.py
+
+- FIND TEMP 
+    - set url
+    - find element using class
+        (By.CLASS_NAME,"classname")
+    - save in variable 
+    -convert verible into text type 
+    - test2.py
+
+- TASK PERFORM IN BEHIND :
+    from selenium.webdriver.chrome.options import Options
+    options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--disable-gpu')
+    driver_path = 'driver\chromedriver.exe'
+    driver = webdriver.Chrome(executable_path=driver_path, options=options)
+
+# INTRACTING METHOD:
+
+<input type="text" name="passwd" id="passwd-id" />
+
+example :
+element = driver.find_element(By.ID, "passwd-id")
+
+other:
+ID = "id"
+NAME = "name"
+XPATH = "xpath"
+LINK_TEXT = "link text"
+PARTIAL_LINK_TEXT = "partial link text"
+TAG_NAME = "tag name"
+CLASS_NAME = "class name"
+CSS_SELECTOR = "css selector"
+
+
+
+# get link (get_property('href'))
+- geturls =  driver.find_elements(By.TAG_NAME,'a')
+    print(links.get_property('href'))
+- 
