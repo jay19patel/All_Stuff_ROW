@@ -37,15 +37,10 @@ plt.plot(df.NAME ,df.ENGLISH,label="English")
 plt.plot(df.NAME ,df.ATTENDANCE,label="attandec")
 
 
-plt.title("STUDENT DATA")
-plt.xlabel("Names")
-plt.ylabel("Attandace")
-plt.legend()
-plt.show()
+plt.title("STUDENT DATA") # give title On Graph
+plt.xlabel("Names") # Give lable 
+plt.ylabel("Attandace") # Give lable 
+plt.legend() #need to Labeling in BOX 
+plt.show() #need to Show 
 
-
-
-
-# col_names = ['name','roll','att','maths','hindi','gujrati','english']
-# df = pd.read_csv('Panda/data.csv', name=col_names,skiprows=[0])  #pandas read this csv
-# print(df)  # give some first data
+print(df)  # give some first data
