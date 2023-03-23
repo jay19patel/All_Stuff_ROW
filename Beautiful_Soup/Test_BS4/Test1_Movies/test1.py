@@ -18,6 +18,7 @@ file = open('Test_BS4/Test1/movies.txt','w')
 for i in range(len(alltitle)):
     print(f"MOVIE : {alltitle[i]} || STARS : {allstars[i]}")
     file.write(f"MOVIE : {alltitle[i]} || STARS : {allstars[i]} \n")
+    
 file.close()
 
 

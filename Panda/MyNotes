@@ -1,0 +1,13 @@
+#Panda is manage data on Frame 
+
+##What is Panda 
+- Panda is a popular data analysis library for the Python programming language. 
+- It provides powerful data structures for data manipulation, analysis, and cleaning.
+- With Pandas, you can easily load and manipulate datasets in various formats, such as CSV, Excel, SQL databases, and more.
+
+
+print(df.head())  # give some first data
+print(df.shape)  # give row and colloums count
+print(df.count()) # count all datas 
+print(df.tail(10)) # give last 10  data 
+print(df.describe()) # give description like count ,meand ,std,min and all 

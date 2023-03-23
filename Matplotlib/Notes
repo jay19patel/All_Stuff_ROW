@@ -1,0 +1,28 @@
+## Matplotlib
+- install 
+
+```python
+    pip install matplotlib
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    plt.plot([1,2,3],[2,3,4])
+    plt.show()
+
+```
+
+
+- plt.title("Jay") : give title
+- plt.ylable("This is Y ") : Give Name of Y Axis
+- plt.xlable("This is y ") : Give Name of X Axis
+
+## Two Graph in one :
+```python 
+    plt.plot(x1,y1,label='First')
+    plt.plot(x2,y2,label='Second')
+    plt.legend() # add Label NavBox
+```
+- plt.plot() #simple line for graph
+- plt.scatter() # doted Graph
+- plt.hist() # doted BUilding type 
