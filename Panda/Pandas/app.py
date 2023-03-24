@@ -1,26 +1,4 @@
 
-# Data Add In Csv File using csv
-import csv
-def add_csv():
-    with open('data.csv', 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-
-        # Add data to file
-        writer.writerow(['STD', 'NAME', 'ROLL','ATTENDANCE','MATHS','HINDI','GUJRATI','ENGLISH'])
-        for i in range(5):
-            STD = input("Enter Stander :")
-            NAME = input("Enter Name :")
-            ROLL = input("Enter Roll no :")
-            ATTENDANCE = input("Enter Attendance :")
-            MATHS = input("Enter Maths Mark :")
-            HINDI = input("Enter Hindi Mark :")
-            GUJRATI = input("Enter Gujarati Mark :")
-            ENGLISH = input("Enter English Mark :")
-            writer.writerow([STD,NAME,ROLL,ATTENDANCE,MATHS,HINDI,GUJRATI,ENGLISH])
-
-        csvfile.close()
-# add_csv()
-
 
 # Read and DataFrame Using Panda 
 import pandas as pd

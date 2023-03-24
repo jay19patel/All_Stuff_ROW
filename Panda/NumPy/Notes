@@ -1,0 +1,94 @@
+## My Notes
+
+- used for scientific computing and data analysis
+- multi-dimensional arrays and matrices
+- mathematical operations to perform
+- Linear algebra :
+- SciPy, Pandas, and Matplotlib are use with NumPy
+
+## Setup
+
+```python
+ import numpy as np
+
+```
+
+### List :
+- hold a collection of items
+- hold items of any data type
+- can grow and shrink dynamically
+- Lists have a wide range of built-in methods for manipulating and accessing data
+- [5,10,15]
+
+### Array :
+ - hold a fixed-size
+ - hold items of only one data type
+ - arrays have a fixed size
+ - faster than lists for numerical operations
+ - arrays have a more limited set of methods.
+ - [ 5 10 15]
+ - int8(8 bit) , int16(16 bit) ,int32 (32 bit),float32 (32 bit),float64(64 bit)
+ - axis 0 ( uper thi niche )and 1 (pelle thi sellu )
+
+## All Methods 
+### np.array(): Create an array from a Python list or tuple.
+ 
+
+### np.zeros(): Create an array filled with zeros of a specified shape.
+[[0. 0. 0. 0. 0.]
+  [0. 0. 0. 0. 0.]]
+
+### np.ones(): Create an array filled with ones of a specified shape.
+
+[[1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]]
+
+### np.arange(): Create an array with regularly spaced values within a given interval.
+
+np.arange(10)
+- 0 thi 10 vache no array banavi appe 
+[0 1 2 3 4 5 6 7 8 9]
+- if we need to 1D to 2D array then use reshape
+- range.reshape(2,5)
+[[0 1 2 3 4]
+ [5 6 7 8 9]]
+
+### np.linspace(): Create an array with evenly spaced values within a given interval.
+
+lin =np.linspace(1,10,5)
+- ek thi 10 vache number joye and 5 value malva joyye 
+print(lin)
+[ 1.    3.25  5.5   7.75 10.  ]
+
+
+### np.reshape(): Reshape an array into a new shape.
+
+- range.reshape(2,5)
+[[0 1 2 3 4]
+ [5 6 7 8 9]]
+
+### np.transpose(): Transpose an array.
+
+- Transpose means ke row ne colom and colum te row bani jay 
+
+### np.dot(): Compute the dot product of two arrays.
+### np.sum(): Compute the sum of array elements.
+
+myarr= np.array([[1,2,3],[5,6,7],[10,11,12]])
+print(myarr.sum(axis=0))
+
+### np.mean(): Compute the mean of array elements.
+### np.std(): Compute the standard deviation of array elements.
+### np.max(): Find the maximum value in an array.
+### np.min(): Find the minimum value in an array.
+### np.argmax(): Find the index of the maximum value in an array.
+
+- maximum values hase teno index return karse 
+
+### np.argmin(): Find the index of the minimum value in an array.
+ - minimum value no index apse 
+
+### np.argsort(): sort kari dey nana thi mota pan idex batavse 
+
+
+### np.ravel(): multiple D ne one D ma kari dey 

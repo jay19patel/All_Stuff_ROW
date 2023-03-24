@@ -12,3 +12,59 @@ print(df.count()) # count all datas
 print(df.tail(10)) # give last 10  data 
 print(df.describe()) # give description like count ,meand ,std,min and all 
 print(df.describe().loc[['mean']]) # only get mean data uing describe 
+
+
+
+- Data reading and writing methods:
+
+    pd.read_csv()
+    pd.read_excel()
+    pd.read_sql()
+    df.to_csv()
+    df.to_excel()
+    df.to_sql()
+
+- Data inspection methods:
+
+    df.head()
+    df.tail()
+    df.describe()
+    df.info()
+
+    
+- Data selection and filtering methods:
+
+    df.loc[]
+    df.iloc[]
+    df.query()
+    df.filter()
+    df.where()
+    df.mask()
+
+
+ - Data manipulation methods:
+
+    df.drop()
+    df.rename()
+    df.sort_values()
+    df.groupby()
+    df.merge()
+    df.join()
+    df.pivot_table()
+
+
+ - Data cleaning methods:
+
+    df.dropna()
+    df.fillna()
+    df.replace()
+
+
+- Data visualization methods:
+
+    df.plot()
+    df.hist()
+    df.boxplot()
+    df.scatter()
+    df.bar()
+    df.line()
