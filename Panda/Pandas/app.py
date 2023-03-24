@@ -2,7 +2,7 @@
 # Data Add In Csv File using csv
 import csv
 def add_csv():
-    with open('Panda/data.csv', 'w', newline='') as csvfile:
+    with open('data.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
 
         # Add data to file
@@ -24,12 +24,11 @@ def add_csv():
 
 # Read and DataFrame Using Panda 
 import pandas as pd
-df = pd.read_csv('Panda/data.csv')
+df = pd.read_csv('data.csv')
 print(df)
 
 # Graph 
 import matplotlib.pyplot as plt
-
 plt.plot(df.NAME ,df.MATHS,label="Maths")
 plt.plot(df.NAME ,df.HINDI,label="Hindi")
 plt.plot(df.NAME ,df.GUJRATI,label="Gujratai")
@@ -37,10 +36,15 @@ plt.plot(df.NAME ,df.ENGLISH,label="English")
 plt.plot(df.NAME ,df.ATTENDANCE,label="attandec")
 
 
-plt.title("STUDENT DATA") # give title On Graph
-plt.xlabel("Names") # Give lable 
-plt.ylabel("Attandace") # Give lable 
-plt.legend() #need to Labeling in BOX 
-plt.show() #need to Show 
+plt.title("STUDENT DATA")
+plt.xlabel("Names")
+plt.ylabel("Attandace")
+plt.legend()
+plt.show()
 
-print(df)  # give some first data
+
+
+
+# col_names = ['name','roll','att','maths','hindi','gujrati','english']
+# df = pd.read_csv('Panda/data.csv', name=col_names,skiprows=[0])  #pandas read this csv
+# print(df)  # give some first data

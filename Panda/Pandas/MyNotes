@@ -11,3 +11,4 @@ print(df.shape)  # give row and colloums count
 print(df.count()) # count all datas 
 print(df.tail(10)) # give last 10  data 
 print(df.describe()) # give description like count ,meand ,std,min and all 
+print(df.describe().loc[['mean']]) # only get mean data uing describe 
