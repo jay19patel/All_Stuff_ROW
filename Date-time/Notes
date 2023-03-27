@@ -1,0 +1,28 @@
+## Date Time :
+
+import datetime 
+
+
+A,a = day name
+B,b = Month name 
+Y = Year(0000)
+w = weekday(0-6)
+
+H = Houre (0-23)
+I = Hour (00-12)
+p = AM | PM
+
+M = minutes
+S = Seconds
+f = microsecond 
+
+Z = time zone 
+j = day of (365)
+c = Local version of date and time
+
+x = Local version of date
+X = Local version of time
+
+# example :
+data = datetime.datetime.now()
+print(data.strftime("%p"))

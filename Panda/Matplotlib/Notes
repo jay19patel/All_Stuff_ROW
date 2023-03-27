@@ -26,3 +26,4 @@
 - plt.plot() #simple line for graph
 - plt.scatter() # doted Graph
 - plt.hist() # doted BUilding type 
+- plt.bar() # columns  

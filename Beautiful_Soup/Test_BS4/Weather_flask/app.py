@@ -5,11 +5,6 @@ from weather import *
 
 app = Flask(__name__)
 
-# app.config['SECRET_KEY'] = 'jaypatel19112001'
-# client = MongoClient('localhost', 27017) # connection 
-# db = client.Website # create table
-# regapi = db.Userdata # triger
-
 
 @app.route('/')
 def HomePage():
