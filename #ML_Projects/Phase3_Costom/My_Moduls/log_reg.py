@@ -12,6 +12,9 @@ class Login_Registration():
         if request.method == "POST":
             username = request.form['username']
             user_password = request.form['password123']
+            print(username)
+            print(user_password)
+
             data =db.find_one({"Username":username})
             if data:
                 if user_password ==data["Password1"]:
