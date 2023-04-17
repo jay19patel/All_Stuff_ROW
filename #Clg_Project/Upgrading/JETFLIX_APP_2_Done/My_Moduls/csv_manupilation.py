@@ -32,7 +32,7 @@ class CSV_Manupilation():
     def get_top_5(df):
         df = df.replace(to_replace="None", value=np.nan)
         df = df.dropna()
-        sorted_data = df.sort_values(by='Imdb_rating', ascending=False)[0:6]
+        sorted_data = df.sort_values(by='Imdb_rating', ascending=False)[0:4]
         return sorted_data
 
     # def Action():

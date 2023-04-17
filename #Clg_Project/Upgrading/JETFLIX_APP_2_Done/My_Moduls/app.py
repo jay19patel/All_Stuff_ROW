@@ -36,7 +36,7 @@ class Data_analysis():
 
         top_movies=[]
         movie_index = df[df['title'] == m_name].index[0]
-        movie_name = sorted(list(enumerate(sim[movie_index])),reverse=True,key=lambda x:x[1])[0:7]
+        movie_name = sorted(list(enumerate(sim[movie_index])),reverse=True,key=lambda x:x[1])[0:5]
         for i in movie_name:
             top_movies.append(df.iloc[i[0]])
         return top_movies
@@ -46,6 +46,7 @@ class Data_analysis():
         df = df.replace(to_replace="None", value=np.nan)
         df = df.dropna()
         df = df.drop_duplicates(subset=['title'])
+        # df['genres'] = df['genres'].apply()
         this_movie = df[df['title'] == m_name].values.tolist()
         return this_movie
 

@@ -134,14 +134,12 @@ def HomePage():
             for gen in checkbox:
                 Gen_data_row = CSV_Manupilation.get_gen_data(gen)
                 for i in Gen_data_row:
-                    Gen_data1 = i[7]
-                    Gen_data.append(Gen_data1)
+                    Gen_data.append(i)
             if request.method == "POST":
                 search_text = request.form["M_name"]
                 this_movie = Data_analysis.this_movie(search_text)
                 top5_datas = Data_analysis.find_by_name(search_text)
                 print(f"finding..{search_text}")
-                print(this_movie)
                 return render_template('Home.html',user=name,subs=checkbox,data=top5_datas,Gen_data=Gen_data,this_movie = this_movie)
             return render_template('Home.html',user=name,subs=checkbox,Gen_data=Gen_data)
     return render_template('Home.html')
@@ -153,7 +151,23 @@ def HomePage():
 def Profile_Page():
     name = session['in_auther']
     user_data = get_jwt_identity()
-    return render_template('UserProfile.html',user_data=user_data,user = name)
+    return render_template('My_Profile.html',user_data=user_data,user = name)
+
+
+# ---------------------- Subscribe Movies  ----------------
+
+@app.route("/Movie_Details_Page" ,methods=["GET","POST"])
+@jwt_required()
+def Movie_Details_Page():
+    if request.method == "POST":
+        user_data = get_jwt_identity()
+        username = user_data['name']
+        search_text = request.form['find_movie_details']
+        this_movie = Data_analysis.this_movie(search_text)
+        top5_datas = Data_analysis.find_by_name(search_text)
+        print(f"finding..{search_text}")
+        return render_template('Movie-Details.html',user=username,data=top5_datas,this_movie = this_movie)
+    return render_template('Movie-Details.html')
 
 
 # ---------------------- Subscribe Movies  ----------------
@@ -161,19 +175,23 @@ def Profile_Page():
 @app.route("/save_movie" ,methods=["GET","POST"])
 @jwt_required()
 def Save_movie():
+    from collections import Counter
     user_data = get_jwt_identity()
     email = user_data['email']
     password12 = user_data['password']
     if request.method == "POST":
+        print("Savd Movies data ")
         filter_criteria = {"email": email,"password": password12}
         
         save_title = request.form['save_title']
         save_genres = request.form['save_genres']
-        result = db.update_many(filter_criteria, {"$push": {'save_title': save_title, 'save_genres': save_genres}})
+        result = db.update_many(filter_criteria, {"$set": {'save_title': save_title, 'save_genres': save_genres}},upsert=True)
 
-    return redirect('/')
+    return redirect('/Movie_Details_Page')
 
 # ---------------------- Movies Recomandation ----------------
+
+
 
 
 if __name__=='__main__':
