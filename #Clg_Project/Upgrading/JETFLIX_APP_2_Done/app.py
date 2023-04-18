@@ -124,12 +124,14 @@ def RegistrationPage():
 @app.route("/" ,methods=["GET","POST"])
 @jwt_required()
 def HomePage():
+    data = get_jwt_identity()
+    filter_criteria = {"email": data['email'],"password": data['password']}
+    user_data = db.find_one(filter_criteria)
     if session.get('log'):
         if session['log'] == 'login':
             name = session['in_auther']
-            data = get_jwt_identity()
             email = data['email']
-            checkbox = data['checkbox']
+            checkbox = user_data['checkbox']
             Gen_data = []
             for gen in checkbox:
                 Gen_data_row = CSV_Manupilation.get_gen_data(gen)
@@ -149,8 +151,20 @@ def HomePage():
 @app.route("/Profile_Page" ,methods=["GET","POST"])
 @jwt_required()
 def Profile_Page():
+    user_data_jwt = get_jwt_identity()
+    filter_criteria = {"email": user_data_jwt['email'],"password": user_data_jwt['password']}
+    user_data = db.find_one(filter_criteria)
+    if request.method == "POST":
+        name1=request.form['my_name']
+        email1=request.form['my_email']
+        phone=request.form['my_phone']
+        pwd1=request.form['my_psw2']
+        checkbox = request.form.getlist('my-checkbox')
+        print("data update")
+        result = db.update_many(filter_criteria, {"$set": {'name': name1, 'email': email1,'phone':phone,'password':pwd1,'checkbox':checkbox}},upsert=True)
+        return redirect(url_for('HomePage'))
     name = session['in_auther']
-    user_data = get_jwt_identity()
+    
     return render_template('My_Profile.html',user_data=user_data,user = name)
 
 
@@ -185,9 +199,9 @@ def Save_movie():
         
         save_title = request.form['save_title']
         save_genres = request.form['save_genres']
-        result = db.update_many(filter_criteria, {"$set": {'save_title': save_title, 'save_genres': save_genres}},upsert=True)
+        result = db.update_many(filter_criteria, {"$set": {'save_title': save_title, 'save_genres': save_genres}})
 
-    return redirect('/Movie_Details_Page')
+    return redirect(url_for('HomePage'))
 
 # ---------------------- Movies Recomandation ----------------
 
